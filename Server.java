@@ -4,7 +4,7 @@ import java.io.*;
 import java.net.*;
 import java.util.Vector;
 
-
+// ë¯¸ì™„ì„±ì¸ë° ì¼ë‹¨ ì €ì¥
 
 class Server {
     public static int inPort = 9999;
@@ -63,19 +63,19 @@ class Server {
         		resetSelectionRps();
         		r = true;
         		rcount++;
-        		return "ÁÖ¸Ô";
+        		return "ì£¼ë¨¹";
         	} else if (num == paper) {
         		resetSelectionRps();
         		p = true;
         		pcount++;
-        		return "º¸ÀÚ±â";
+        		return "ë³´ìê¸°";
         	} else if (num == scissors) {
         		resetSelectionRps();
         		s = true;
         		scount++;
-        		return "°¡À§";
+        		return "ê°€ìœ„";
         	} else {
-        		return "ÀÔ·Â ¿À·ù";
+        		return "ì…ë ¥ ì˜¤ë¥˜";
         	}
         }
   
@@ -87,7 +87,7 @@ class Server {
         			} else {
         				result = 1;
         			}
-        		} else { // 1Á¾·ù¸¸ ³ª¿À¸é ¹«½ÂºÎ.
+        		} else { // 1ì¢…ë¥˜ë§Œ ë‚˜ì˜¤ë©´ ë¬´ìŠ¹ë¶€.
         			result = 0;
         		}
             } else if (pcount == 0) {
@@ -97,7 +97,7 @@ class Server {
         			} else {
         				result = 1;
         			}
-        		} else { // 1Á¾·ù¸¸ ³ª¿À¸é ¹«½ÂºÎ.
+        		} else { // 1ì¢…ë¥˜ë§Œ ë‚˜ì˜¤ë©´ ë¬´ìŠ¹ë¶€.
         			result = 0;
         		}            				
         	} else if (scount == 0) {
@@ -107,10 +107,10 @@ class Server {
         			} else {
         				result = 1;
         			}
-        		} else { // 1Á¾·ù¸¸ ³ª¿À¸é ¹«½ÂºÎ.
+        		} else { // 1ì¢…ë¥˜ë§Œ ë‚˜ì˜¤ë©´ ë¬´ìŠ¹ë¶€.
         			result = 0;
         		}        		
-        	} else { // ¼Â ´Ù Ä«¿îÆ®µÇ¸é ¹«½ÂºÎ.
+        	} else { // ì…‹ ë‹¤ ì¹´ìš´íŠ¸ë˜ë©´ ë¬´ìŠ¹ë¶€.
         		result = 0;
         	}
         }
@@ -121,11 +121,11 @@ class Server {
         	int i = 0;
     		for (Client c : clients) {
                 if (result == 1) {
-                    clientStr.add("½Â¸®");
+                    clientStr.add("ìŠ¹ë¦¬");
                 } else if (result == -1) {
-                	clientStr.add("ÆĞ¹è");
+                	clientStr.add("íŒ¨ë°°");
                 } else {
-                	clientStr.add("¹«½ÂºÎ");
+                	clientStr.add("ë¬´ìŠ¹ë¶€");
                 }
             }
     		
@@ -133,7 +133,7 @@ class Server {
     		
         	if (selectedClients == clients.size()) {
         		for (int j = 0; j < clients.size(); j++) {
-        		    // °¢ Å¬¶óÀÌ¾ğÆ®¿¡ ´ëÇØ ÇØ´çÇÏ´Â °á°ú¸¦ Àü¼ÛÇÕ´Ï´Ù.
+        		    // ê° í´ë¼ì´ì–¸íŠ¸ì— ëŒ€í•´ í•´ë‹¹í•˜ëŠ” ê²°ê³¼ë¥¼ ì „ì†¡í•©ë‹ˆë‹¤.
         			clients.get(j).send(clientStr.elementAt(j));
         		}
             	
@@ -161,7 +161,7 @@ class Server {
                     line = in.readLine();
                     System.out.println("("+ socket.getInetAddress()+ ") " + line);
                     double num = Double.parseDouble(line);
-                    this.send("´ç½ÅÀÇ ¼±ÅÃ: " + rpsNumToString(num) + "!");
+                    this.send("ë‹¹ì‹ ì˜ ì„ íƒ: " + rpsNumToString(num) + "!");
                     rpsPlay(r, p, s);
                     rpsResult();
                 }
