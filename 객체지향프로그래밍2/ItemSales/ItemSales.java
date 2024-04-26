@@ -48,16 +48,16 @@ public class ItemSales {
 	}
 	
 	public void salesResult(int num) {
-		System.out.println("µµ½Ã¶ô " + num + "°³¸¦ ÆÈ¾Ò´Ù.");
+		System.out.println("ë„ì‹œë½ " + num + "ê°œë¥¼ íŒ”ì•˜ë‹¤.");
 		int defaultSalePriceResult = getSalePrice() * num;
 		int discountSalePriceResult = (getSalePrice() * num) * (100 -getMassSalesDiscountRate()) / 100;
 		int discountPriceResult = (getSalePrice() * num) * getMassSalesDiscountRate() / 100;
 		
-		if (num < getNumOfMassSales()) { // ´ë·® ÆÇ¸Å ¼ö·® ¹Ì´Ş½Ã
-			System.out.println("ÇÒÀÎÀ²ÀÌ Àû¿ëµÇÁö ¾Ê¾Æ ÆÇ¸Å °¡°İÀº " + defaultSalePriceResult + "¿øÀÌ´Ù.");
+		if (num < getNumOfMassSales()) { // ëŒ€ëŸ‰ íŒë§¤ ìˆ˜ëŸ‰ ë¯¸ë‹¬ì‹œ
+			System.out.println("í• ì¸ìœ¨ì´ ì ìš©ë˜ì§€ ì•Šì•„ íŒë§¤ ê°€ê²©ì€ " + defaultSalePriceResult + "ì›ì´ë‹¤.");
 			this.totalSalesPrice += defaultSalePriceResult;
 		} else {
-			System.out.println("ÇÒÀÎÀ²ÀÌ Àû¿ëµÇ¾î ÆÇ¸Å °¡°İÀº " + discountSalePriceResult + "¿øÀÌ´Ù.");
+			System.out.println("í• ì¸ìœ¨ì´ ì ìš©ë˜ì–´ íŒë§¤ ê°€ê²©ì€ " + discountSalePriceResult + "ì›ì´ë‹¤.");
 			this.totalSalesPrice += discountSalePriceResult;
 			this.totalDiscount += discountPriceResult;
 		}
@@ -69,7 +69,7 @@ public class ItemSales {
 	}
 	
 	public void printAccmulateSales() {
-		System.out.println("´©Àû ÆÇ¸Å ¼ö·® = " + getNumOfTotalSales() + "°³, ´©Àû ÆÇ¸Å ±İ¾× = " + getTotalSalesPrice() + "¿ø, ´©Àû ÇÒÀÎ±İ¾× = " + getTotalDiscount() + "¿ø");
+		System.out.println("ëˆ„ì  íŒë§¤ ìˆ˜ëŸ‰ = " + getNumOfTotalSales() + "ê°œ, ëˆ„ì  íŒë§¤ ê¸ˆì•¡ = " + getTotalSalesPrice() + "ì›, ëˆ„ì  í• ì¸ê¸ˆì•¡ = " + getTotalDiscount() + "ì›");
 		System.out.println();
 	}
 }
