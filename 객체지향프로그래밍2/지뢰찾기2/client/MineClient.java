@@ -97,7 +97,7 @@ public static int guess() throws IOException {
 		}
 		String count = in.readLine();
 		int cnt = Integer.parseInt(count);
-		System.out.println(cnt + "�� �õ��߽��ϴ�!");
+		System.out.println(cnt + "¹ø ½ÃµµÇß½À´Ï´Ù!");
 		System.out.println("   No mine at ("+x+", "+y+")");
 		
 	return 0;
